@@ -51,10 +51,10 @@
 		$per_page = 9;
 		
 		//sql query
-		$result = mysql_query("SELECT * FROM gallery WHERE fid=\"{$fid}\"");
+		$result = $database->query("SELECT * FROM gallery WHERE fid=\"{$fid}\"");
 		
 		//total number of pictures
-		$total_results = mysql_num_rows($result);
+		$total_results = $database->num_rows($result);
 		
 		//total pages we going to have
 		$total_pages = ceil($total_results / $per_page);
@@ -140,7 +140,7 @@
 							}
 							
 							// echo out the contents of each row into a table
-							echo '<td class="container"><a href="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.mysql_result($result, $i, 'folder').'/HD/'.mysql_result($result, $i, 'filename').'" download>Download Photo</a>  ';
+							echo '<td class="container"><a href="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.db_result($result, $i, 'folder').'/HD/'.db_result($result, $i, 'filename').'" download>Download Photo</a>  ';
 						}       
 						 echo "</tr>";
 						 //echo "<tr height=\"50\"></tr>";

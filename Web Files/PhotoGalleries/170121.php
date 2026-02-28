@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
-<title>Insta-Memories | Jasmine's Quincea«ÐÐÐÐÐÐåòá¼¯title>
+<title>Insta-Memories | Jasmine's QuinceaÂÂ«ÃÃÃÃÃÃÃ¥Ã²Ã¡Â¼Â¯title>
 
 <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="../css/prettyPhoto.css" type="text/css" media="all">
@@ -37,8 +37,8 @@
         <!-- header -->
         <?php
 		//Event Information
-		$event_title = "Jasmine's Quincea«Ðera";
-		$event_date = "01.21.2017";
+		$result = $database->query("SELECT * FROM gallery WHERE fid=\"{$fid}\"");
+		$total_results = $database->num_rows($result);
 		$fid = 34;
 		
 		//Zip Download
@@ -141,7 +141,7 @@
 							}
 							
 							// echo out the contents of each row into a table
-							echo '<td class="container"><a href="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.mysql_result($result, $i, 'folder').'/HD/'.mysql_result($result, $i, 'filename').'" download>Download Photo</a>  ';
+							echo '<td class="container"><a href="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.db_result($result, $i, 'folder').'/HD/'.db_result($result, $i, 'filename').'" download>Download Photo</a>  ';
 						}       
 						 echo "</tr>";
 						 //echo "<tr height=\"50\"></tr>";
