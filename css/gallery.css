@@ -1,0 +1,29 @@
+.container {
+	width: 210px;
+	height:auto;
+}
+/* resize images */
+.container img {
+	width:100%;
+	height:auto;
+}
+.img { 
+box-sizing:border-box;
+box-shadow:#666;
+}
+
+.containersgl {
+	width: 120px;
+	height:auto;
+}
+/* resize images */
+.containersgl img {
+	width:100%;
+	height:auto;
+}
+.img { 
+box-sizing:border-box;
+box-shadow:#666;
+}
+
+ 
