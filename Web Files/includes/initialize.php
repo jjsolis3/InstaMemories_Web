@@ -16,6 +16,8 @@ defined('LIB_PATH') ? null :
 // load config file first
 require_once(LIB_PATH.DS.'config.php');
 
+require_once(LIB_PATH.DS.'mysql_compat.php');
+
 // load basic functions next so that everything after can use them
 require_once(LIB_PATH.DS.'functions.php');
 

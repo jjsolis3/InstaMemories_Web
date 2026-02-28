@@ -2,6 +2,7 @@
 # FileName="Connection_php_mysql.htm"
 # Type="MYSQL"
 # HTTP="true"
+require_once dirname(__DIR__) . '/includes/mysql_compat.php';
 $hostname_InstaMemoriesDB = "instamemories.co";
 $database_InstaMemoriesDB = "IMPB_db";
 $username_InstaMemoriesDB = "phpadmininsta";
