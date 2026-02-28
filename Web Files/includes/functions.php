@@ -41,6 +41,18 @@ spl_autoload_register(function ($class_name) {
 	}
 });
 
+
+function db_result($result, $row, $field = 0) {
+	if (!mysqli_data_seek($result, $row)) {
+		return false;
+	}
+	$data = mysqli_fetch_array($result, MYSQLI_BOTH);
+	if ($data === null || $data === false) {
+		return false;
+	}
+	return isset($data[$field]) ? $data[$field] : false;
+}
+
 function include_layout_template($template="") {
 	include(SERVER_ROOT.DS.'layout'.DS.$template);
 }

@@ -39,8 +39,8 @@
         <!-- header -->
         <?php
 		//Event Information
-		$event_title = "Alyssa's Quincea«ÐÐÐåòa";
-		$event_date = "08.26.2017";
+		$result = $database->query("SELECT * FROM gallery WHERE fid=\"{$fid}\" ORDER BY  `gallery`.`id` ASC ");
+		$total_results = $database->num_rows($result);
 		$fid = 46;
 		
 		//Zip Download
@@ -143,7 +143,7 @@
 							}
 							
 							// echo out the contents of each row into a table
-							echo '<td class="container"><a href="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.mysql_result($result, $i, 'folder').'/'.mysql_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.mysql_result($result, $i, 'folder').'/HD/'.mysql_result($result, $i, 'filename').'" download>Download Photo</a>  ';
+							echo '<td class="container"><a href="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="lightbox-image" rel="prettyPhoto[group1]" ><img src="../images/'.db_result($result, $i, 'folder').'/'.db_result($result, $i, 'filename').'" class="img" alt=""></a><a href="../images/'.db_result($result, $i, 'folder').'/HD/'.db_result($result, $i, 'filename').'" download>Download Photo</a>  ';
 						}       
 						 echo "</tr>";
 						 echo "<tr height=\"50\"></tr>";
