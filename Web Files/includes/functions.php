@@ -2,19 +2,10 @@
 
 $logoimage = '<p><a href="../index.php"><img src="/images/emailLogo.jpg"></a></p>';
 
-function mysql_prep( $value ) {
-	$magic_quotes_active = get_magic_quotes_gpc();
-	$new_enough_php = function_exists( "mysql_real_escape_string" );
-	if ( $new_enough_php ) {
-		if ( $magic_quotes_active ) {
-			$value = stripslashes( $value );
-		} else {
-			if ( !$magic_quotes_active ) {
-				$value = addslashes( $value );
-			}
-		}
-	}
-	return $value;
+function mysql_prep($value) {
+	// get_magic_quotes_gpc() and mysql_* were removed in modern PHP,
+	// so keep escaping behavior simple and forward-compatible.
+	return addslashes($value);
 }
 
 function strip_zeros_from_date( $marked_string="" ) {
